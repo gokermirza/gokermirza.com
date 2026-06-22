@@ -114,7 +114,6 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           </Column>
           <Row marginBottom="32" horizontal="center">
             <Row gap="16" vertical="center">
-              <Avatar size="s" src={person.avatar} />
               <Text variant="label-default-m" onBackground="brand-weak">
                 {person.name}
               </Text>

@@ -7,7 +7,7 @@ const person: Person = {
   name: `Göker Mirza`,
   // TODO: dilersen ünvanını güncelle (ör. "Performans & Strateji Danışmanı")
   role: "Strateji ve Performans Yazarı",
-  avatar: "/images/avatar.jpg",
+  avatar: "",
   // TODO: gerçek e-posta adresini yaz
   email: "gokermirza@gmail.com",
   location: "Europe/Istanbul", // IANA time zone
@@ -84,7 +84,7 @@ const about: About = {
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
     display: false, // TODO: bir randevu linkin varsa true yap ve link gir
