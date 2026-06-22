@@ -51,7 +51,7 @@ const home: Home = {
   label: "Anasayfa",
   title: `${person.name} — Strateji, Performans ve İnsan`,
   description: `Strateji, performans yönetimi ve insan davranışı üzerine yazılar; Kurumsal Pusula videoları ve projeler.`,
-  headline: <>Strateji ve insanı bir araya getiriyorum</>,
+  headline: <>Sistem ve insanı bir araya getiriyorum</>,
   featured: {
     display: true,
     title: (
@@ -98,8 +98,7 @@ const about: About = {
         Strateji, iş yönetimi ve insan davranışının kesiştiği noktada üretmeyi seviyorum.
         OKR ve hedef yönetiminden davranış bilimlerine, sanat ve yapay zekâdan kurumsal kültüre
         kadar geniş bir alanda yazıyor; öğrendiklerimi <strong>Kurumsal Pusula</strong> kanalında
-        videolara dönüştürüyorum. Boş zamanlarımda da kendi projelerimi hayata geçiriyorum.
-        {/* TODO: kendi cümlelerinle güncelle */}
+        videolara dönüştürüyorum.
       </>
     ),
   },
