@@ -192,12 +192,20 @@ const videos: Videos = {
   label: "Videolar",
   title: `Videolar – Kurumsal Pusula`,
   description: `${person.name}'nın Kurumsal Pusula kanalındaki videoları`,
-  channelUrl: "https://www.youtube.com/@kurumsalpusula", // TODO: doğrula
-  // TODO: kendi videolarının ID'lerini ekle (youtube.com/watch?v=XXXX -> "XXXX")
+  channelUrl: "https://www.youtube.com/@kurumsalpusula",
   videos: [
-    { id: "dQw4w9WgXcQ", title: "Örnek video 1 (placeholder)" },
-    { id: "dQw4w9WgXcQ", title: "Örnek video 2 (placeholder)" },
-    { id: "dQw4w9WgXcQ", title: "Örnek video 3 (placeholder)" },
+    {
+      id: "KO4Nl6PW1ys",
+      title: "Yıllık Performans Görüşmesi: Gelişim mi, Ceza mı?",
+    },
+    {
+      id: "5x2dhMzA22Q",
+      title: "Kurumsal Performans Sistemlerinin Fabrika Ayarları",
+    },
+    {
+      id: "huYZUxLRA4o",
+      title: "Kurumsal Pusula",
+    },
   ],
 };
 
