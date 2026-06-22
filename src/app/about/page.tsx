@@ -335,6 +335,34 @@ export default function About() {
               </Column>
             </>
           )}
+
+          <Column
+            fillWidth
+            horizontal="center"
+            align="center"
+            gap="16"
+            padding="xl"
+            marginTop="xl"
+            radius="l"
+            background="surface"
+            border="neutral-alpha-weak"
+          >
+            <Heading variant="heading-strong-l" align="center" wrap="balance">
+              Bir fikrin mi var?
+            </Heading>
+            <Text variant="body-default-m" onBackground="neutral-weak" align="center" wrap="balance">
+              Strateji, performans ve oyunlaştırma üzerine konuşmak ya da iş birliği için
+              bana yazabilirsin.
+            </Text>
+            <Row gap="8" wrap horizontal="center">
+              <Button href={`mailto:${person.email}`} variant="primary" size="m" prefixIcon="email">
+                E-posta gönder
+              </Button>
+              <Button href="/work/skorfy" variant="secondary" size="m" arrowIcon>
+                Skorfy'yi gör
+              </Button>
+            </Row>
+          </Column>
         </Column>
       </Row>
     </Column>

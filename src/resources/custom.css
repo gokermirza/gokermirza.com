@@ -67,3 +67,9 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+
+/* Blog post TOC: hide Once UI's built-in "On this page" label so our Turkish
+   "Bu sayfada" heading is the only one shown. */
+#blog-toc > :last-child > :first-child {
+  display: none;
+}

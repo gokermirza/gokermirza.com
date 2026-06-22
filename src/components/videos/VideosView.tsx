@@ -1,27 +1,14 @@
-import { Button, Column, Flex, Heading, Text } from "@once-ui-system/core";
+import { Column, Flex, Heading, Text } from "@once-ui-system/core";
 import { videos } from "@/resources";
 
 export function VideosView() {
   return (
     <Column fillWidth gap="40" horizontal="center">
-      {videos.channelUrl && (
-        <Button
-          href={videos.channelUrl}
-          target="_blank"
-          variant="secondary"
-          size="m"
-          prefixIcon="youtube"
-          suffixIcon="arrowUpRightFromSquare"
-        >
-          Kurumsal Pusula kanalına git
-        </Button>
-      )}
-
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-          gap: "24px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
+          gap: "28px",
           width: "100%",
         }}
       >

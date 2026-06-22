@@ -97,7 +97,12 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             <SmartLink href="/blog">
               <Text variant="label-strong-m">Blog</Text>
             </SmartLink>
-            <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
+            <Text
+              variant="body-default-xs"
+              onBackground="neutral-weak"
+              marginBottom="12"
+              style={{ fontFamily: "var(--font-code)" }}
+            >
               {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
             </Text>
             <Heading variant="display-strong-m">{post.metadata.title}</Heading>
@@ -152,6 +157,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
         </Column>
       </Row>
       <Column
+        id="blog-toc"
         maxWidth={12}
         paddingLeft="40"
         fitHeight
@@ -160,6 +166,13 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
         gap="16"
         m={{ hide: true }}
       >
+        <Text
+          variant="label-default-s"
+          onBackground="neutral-weak"
+          style={{ fontFamily: "var(--font-code)", textTransform: "uppercase", letterSpacing: "0.08em" }}
+        >
+          Bu sayfada
+        </Text>
         <HeadingNav fitHeight />
       </Column>
     </Row>

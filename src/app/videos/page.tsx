@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema, Text } from "@once-ui-system/core";
+import { Button, Column, Heading, Meta, Schema, Text } from "@once-ui-system/core";
 import { baseURL, about, person, videos } from "@/resources";
 import { VideosView } from "@/components/videos/VideosView";
 
@@ -37,6 +37,38 @@ export default function Videos() {
         </Text>
       </Column>
       <VideosView />
+
+      {videos.channelUrl && (
+        <Column
+          fillWidth
+          maxWidth="s"
+          horizontal="center"
+          align="center"
+          gap="16"
+          padding="xl"
+          marginTop="24"
+          radius="l"
+          background="surface"
+          border="neutral-alpha-weak"
+        >
+          <Heading variant="heading-strong-l" align="center" wrap="balance">
+            Yeni videoları kaçırma
+          </Heading>
+          <Text variant="body-default-m" onBackground="neutral-weak" align="center" wrap="balance">
+            Strateji, performans ve insan davranışı üzerine yeni videolar için Kurumsal Pusula'ya abone ol.
+          </Text>
+          <Button
+            href={videos.channelUrl}
+            target="_blank"
+            variant="primary"
+            size="m"
+            prefixIcon="youtube"
+            suffixIcon="arrowUpRightFromSquare"
+          >
+            Kanala git
+          </Button>
+        </Column>
+      )}
     </Column>
   );
 }

@@ -15,6 +15,7 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { CompassMark, CompassDivider } from "@/components/Compass";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -44,6 +45,9 @@ export default function Home() {
       />
       <Column fillWidth horizontal="center" gap="m">
         <Column maxWidth="s" horizontal="center" align="center">
+          <RevealFx horizontal="center" paddingTop="24" paddingBottom="8">
+            <CompassMark size={36} />
+          </RevealFx>
           {home.featured.display && (
             <RevealFx
               fillWidth
@@ -105,9 +109,7 @@ export default function Home() {
       </RevealFx>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
-          <Row fillWidth paddingRight="64">
-            <Line maxWidth={48} />
-          </Row>
+          <CompassDivider />
           <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
             <Row flex={1} paddingLeft="l" paddingTop="24">
               <Heading as="h2" variant="display-strong-xs" wrap="balance">
@@ -126,9 +128,7 @@ export default function Home() {
               />
             </Row>
           </Row>
-          <Row fillWidth paddingLeft="64" horizontal="end">
-            <Line maxWidth={48} />
-          </Row>
+          <CompassDivider />
         </Column>
       )}
       <Projects range={[2]} />

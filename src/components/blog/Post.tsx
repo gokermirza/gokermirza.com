@@ -43,7 +43,11 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
             <Row vertical="center" gap="16">
               <Text variant="label-default-s">{person.name}</Text>
             </Row>
-            <Text variant="body-default-xs" onBackground="neutral-weak">
+            <Text
+              variant="body-default-xs"
+              onBackground="neutral-weak"
+              style={{ fontFamily: "var(--font-code)" }}
+            >
               {formatDate(post.metadata.publishedAt, false)}
             </Text>
           </Row>
@@ -51,7 +55,15 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
             {post.metadata.title}
           </Text>
           {post.metadata.tag && (
-            <Text variant="label-strong-s" onBackground="neutral-weak">
+            <Text
+              variant="label-default-s"
+              onBackground="accent-weak"
+              style={{
+                fontFamily: "var(--font-code)",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+              }}
+            >
               {post.metadata.tag}
             </Text>
           )}
