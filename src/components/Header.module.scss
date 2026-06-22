@@ -11,7 +11,21 @@
 @media (max-width: breakpoints.$s) {
     .position {
         top: auto;
-        bottom: var(--static-space-24);
+        bottom: max(var(--static-space-24), env(safe-area-inset-bottom));
+    }
+
+    // Bottom tab bar: larger, higher-contrast touch targets on mobile
+    .position button {
+        height: 2.75rem !important;
+        min-width: 2.75rem !important;
+        padding-left: 0.625rem !important;
+        padding-right: 0.625rem !important;
+    }
+
+    .position button svg {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        font-size: 1.5rem !important;
     }
 
     .mask {

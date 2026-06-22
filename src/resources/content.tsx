@@ -51,7 +51,7 @@ const home: Home = {
   label: "Anasayfa",
   title: `${person.name} — Strateji, Performans ve İnsan`,
   description: `Strateji, performans yönetimi ve insan davranışı üzerine yazılar; Kurumsal Pusula videoları ve projeler.`,
-  headline: <>Strateji, performans ve insanı bir araya getiriyorum</>,
+  headline: <>Strateji, iş hayatı ve insanı bir araya getiriyorum</>,
   featured: {
     display: true,
     title: (
@@ -67,7 +67,7 @@ const home: Home = {
   },
   subline: (
     <>
-      Ben {person.firstName}. OKR, performans yönetimi ve davranış bilimleri üzerine yazıyor,{" "}
+      Ben {person.firstName}. Davranış bilimleri, OKR-performans yönetimi, oyunlaştırma ve liderlik üzerine yazıyor,{" "}
       <Text as="span" size="xl" weight="strong">Kurumsal Pusula</Text> kanalında video üretiyor
       ve <br /> kendi projem <Text as="span" size="xl" weight="strong">Skorfy</Text>'yi geliştiriyorum.
     </>
@@ -95,7 +95,7 @@ const about: About = {
     title: "Merhaba",
     description: (
       <>
-        Strateji, performans yönetimi ve insan davranışının kesiştiği noktada üretmeyi seviyorum.
+        Strateji, iş yönetimi ve insan davranışının kesiştiği noktada üretmeyi seviyorum.
         OKR ve hedef yönetiminden davranış bilimlerine, sanat ve yapay zekâdan kurumsal kültüre
         kadar geniş bir alanda yazıyor; öğrendiklerimi <strong>Kurumsal Pusula</strong> kanalında
         videolara dönüştürüyorum. Boş zamanlarımda da kendi projelerimi hayata geçiriyorum.
@@ -157,6 +157,14 @@ const about: About = {
       {
         title: "Davranış Bilimleri",
         description: <>Karar verme, höristikler ve insan davranışının kurumsal yansımaları.</>,
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Oyunlaştırma (Gamification)",
+        description: (
+          <>Motivasyon, seri/rozet mekanikleri ve oyunlaştırmanın hedef tutturmadaki rolü.</>
+        ),
         tags: [],
         images: [],
       },
