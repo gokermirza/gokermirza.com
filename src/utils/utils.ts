@@ -19,6 +19,7 @@ type Metadata = {
   tag?: string;
   team: Team[];
   link?: string;
+  priority?: number; // lower = pinned higher in lists that opt into pinning
 };
 
 import { notFound } from "next/navigation";
@@ -49,6 +50,7 @@ function readMDXFile(filePath: string) {
     tag: data.tag || [],
     team: data.team || [],
     link: data.link || "",
+    priority: typeof data.priority === "number" ? data.priority : undefined,
   };
 
   return { metadata, content };

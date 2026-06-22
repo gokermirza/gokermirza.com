@@ -8,6 +8,7 @@ interface PostsProps {
   thumbnail?: boolean;
   direction?: "row" | "column";
   exclude?: string[];
+  pinnedFirst?: boolean; // when true, posts with a `priority` frontmatter are listed first
 }
 
 export function Posts({
@@ -16,6 +17,7 @@ export function Posts({
   thumbnail = false,
   exclude = [],
   direction,
+  pinnedFirst = false,
 }: PostsProps) {
   let allBlogs = getPosts(["src", "app", "blog", "posts"]);
 
@@ -25,6 +27,14 @@ export function Posts({
   }
 
   const sortedBlogs = allBlogs.sort((a, b) => {
+    if (pinnedFirst) {
+      const pa = a.metadata.priority;
+      const pb = b.metadata.priority;
+      const hasA = typeof pa === "number";
+      const hasB = typeof pb === "number";
+      if (hasA && hasB && pa !== pb) return (pa as number) - (pb as number);
+      if (hasA !== hasB) return hasA ? -1 : 1;
+    }
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 
