@@ -11,21 +11,32 @@
 @media (max-width: breakpoints.$s) {
     .position {
         top: auto;
-        bottom: max(var(--static-space-24), env(safe-area-inset-bottom));
+        bottom: calc(var(--static-space-16) + env(safe-area-inset-bottom));
     }
 
-    // Bottom tab bar: larger, higher-contrast touch targets on mobile
-    .position button {
-        height: 2.75rem !important;
-        min-width: 2.75rem !important;
-        padding-left: 0.625rem !important;
-        padding-right: 0.625rem !important;
+    // Bottom tab bar: solid, prominent and easy to tap on mobile
+    .navPill {
+        gap: 0.25rem;
+        padding: 0.5rem 0.5rem !important;
+        background: var(--page-background) !important;
+        border-color: var(--neutral-alpha-medium) !important;
+        box-shadow: 0 0.5rem 1.75rem rgba(0, 0, 0, 0.55) !important;
+        pointer-events: auto;
+        z-index: 11;
     }
 
-    .position button svg {
-        width: 1.5rem !important;
-        height: 1.5rem !important;
-        font-size: 1.5rem !important;
+    // Enlarge each tab + theme toggle for comfortable touch targets
+    .navPill button {
+        height: 3.25rem !important;
+        min-width: 3.25rem !important;
+        padding-left: 0.875rem !important;
+        padding-right: 0.875rem !important;
+    }
+
+    .navPill svg {
+        width: 1.65rem !important;
+        height: 1.65rem !important;
+        font-size: 1.65rem !important;
     }
 
     .mask {

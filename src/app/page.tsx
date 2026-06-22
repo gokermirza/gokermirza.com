@@ -111,11 +111,19 @@ export default function Home() {
           <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
             <Row flex={1} paddingLeft="l" paddingTop="24">
               <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Blog'dan son yazılar
+                Başlıca yazılar
               </Heading>
             </Row>
             <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
+              <Posts
+                include={[
+                  "okrler-organizasyona-nasil-entegre-edilir",
+                  "etkili-okrler-nasil-yazilir",
+                  "sanat-matematik-ve-yapay-zeka-1-yanilgi",
+                  "savasi-hackleyen-adam",
+                ]}
+                columns="2"
+              />
             </Row>
           </Row>
           <Row fillWidth paddingLeft="64" horizontal="end">

@@ -8,6 +8,7 @@ interface PostsProps {
   thumbnail?: boolean;
   direction?: "row" | "column";
   exclude?: string[];
+  include?: string[]; // when set, show only these slugs, in this exact order
   pinnedFirst?: boolean; // when true, posts with a `priority` frontmatter are listed first
 }
 
@@ -16,10 +17,28 @@ export function Posts({
   columns = "1",
   thumbnail = false,
   exclude = [],
+  include,
   direction,
   pinnedFirst = false,
 }: PostsProps) {
   let allBlogs = getPosts(["src", "app", "blog", "posts"]);
+
+  // Curated selection: only the given slugs, preserving the requested order
+  if (include && include.length) {
+    const bySlug = new Map(allBlogs.map((p) => [p.slug, p]));
+    const curated = include.map((slug) => bySlug.get(slug)).filter(Boolean) as typeof allBlogs;
+    return (
+      <>
+        {curated.length > 0 && (
+          <Grid columns={columns} s={{ columns: 1 }} fillWidth marginBottom="40" gap="16">
+            {curated.map((post) => (
+              <Post key={post.slug} post={post} thumbnail={thumbnail} direction={direction} />
+            ))}
+          </Grid>
+        )}
+      </>
+    );
+  }
 
   // Exclude by slug (exact match)
   if (exclude.length) {

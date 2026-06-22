@@ -17,7 +17,7 @@ const person: Person = {
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>{person.firstName}'nın bültenine abone ol</>,
+  title: <>{person.firstName}'in bültenine abone ol</>,
   description: (
     <>Strateji, performans yönetimi ve insan davranışı üzerine ara sıra yazıyorum.</>
   ),
@@ -51,7 +51,7 @@ const home: Home = {
   label: "Anasayfa",
   title: `${person.name} — Strateji, Performans ve İnsan`,
   description: `Strateji, performans yönetimi ve insan davranışı üzerine yazılar; Kurumsal Pusula videoları ve projeler.`,
-  headline: <>Strateji, iş hayatı ve insanı bir araya getiriyorum</>,
+  headline: <>Strateji ve insanı bir araya getiriyorum</>,
   featured: {
     display: true,
     title: (
@@ -184,7 +184,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Strateji, performans ve insan üzerine yazılar",
+  title: "Tüm Blog Yazıları",
   description: `${person.name}'nın yazıları`,
 };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { mailchimp, newsletter } from "@/resources";
+import { mailchimp, newsletter, person } from "@/resources";
 import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
 import { useState } from "react";
@@ -32,7 +32,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
     setEmail(value);
 
     if (!validateEmail(value)) {
-      setError("Please enter a valid email address.");
+      setError("Lütfen geçerli bir e-posta adresi girin.");
     } else {
       setError("");
     }
@@ -43,8 +43,24 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
   const handleBlur = () => {
     setTouched(true);
     if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
+      setError("Lütfen geçerli bir e-posta adresi girin.");
     }
+  };
+
+  // No newsletter backend: submitting opens the visitor's mail client addressed
+  // to Göker, pre-filled with their email as a subscription request.
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setTouched(true);
+    if (email === "" || !validateEmail(email)) {
+      setError("Lütfen geçerli bir e-posta adresi girin.");
+      return;
+    }
+    const subject = encodeURIComponent("Bülten aboneliği");
+    const body = encodeURIComponent(
+      `Merhaba Göker,\n\nBültenine abone olmak istiyorum.\nE-posta adresim: ${email}`,
+    );
+    window.location.href = `mailto:${person.email}?subject=${subject}&body=${body}`;
   };
 
   if (newsletter.display === false) return null;
@@ -118,8 +134,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           display: "flex",
           justifyContent: "center",
         }}
-        action={mailchimp.action}
-        method="post"
+        onSubmit={handleSubmit}
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
       >
@@ -172,8 +187,8 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           </div>
           <div className="clear">
             <Row height="48" vertical="center">
-              <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
-                Subscribe
+              <Button id="mc-embedded-subscribe" type="submit" value="Abone ol" size="m" fillWidth>
+                Abone ol
               </Button>
             </Row>
           </div>
